@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
   {
     id: "cherubim-memorial",
     title: "Cherubim of Heaven Memorial Park Management System",
-    subtitle: "Client Capstone Project — Web-Based Memorial Services Management & Integrated POS",
+    subtitle: "Design and Development of a Web-Based Memorial Services Management System with Integrated POS",
     role: "Project Manager & Front-End Developer",
     description: "A web-based memorial services management system with integrated Point-of-Sale (POS) built for Cherubim of Heaven Memorial Park in Hagonoy, Bulacan. Replaces manual logbooks and spreadsheets with one platform for burial records, satellite grave mapping, installment tracking, wake scheduling, and contract renewal alerts.",
     highlights: [
