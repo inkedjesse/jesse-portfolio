@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download, Mail, Sparkles, CheckCircle2, ShieldCheck, BookOpen, Layers } from 'lucide-react';
+import { ArrowRight, Download, Mail, Sparkles, CheckCircle2, ShieldCheck, BookOpen, Layers, MapPin } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
@@ -93,6 +93,29 @@ export const Hero: React.FC = () => {
                 <span className="text-emerald-400 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> ready
                 </span>
+              </div>
+
+              {/* Profile Portrait & Identity */}
+              <div className="py-5 border-b border-slate-800/80 flex items-center gap-4 sm:gap-5">
+                <div className="p-[2px] rounded-2xl bg-gradient-to-tr from-brand-500 via-indigo-400 to-sky-400 shadow-lg shadow-brand-500/20 shrink-0">
+                  <img
+                    src="/profile.jpg"
+                    alt={PERSONAL_INFO.name}
+                    className="w-24 h-24 sm:w-28 sm:h-28 rounded-[14px] object-cover object-top bg-black block"
+                  />
+                </div>
+                <div className="min-w-0 space-y-1">
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-tight truncate">
+                    {PERSONAL_INFO.name}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-medium text-brand-300 leading-snug">
+                    Frontend Developer &amp; UI/UX Designer
+                  </p>
+                  <p className="text-xs text-slate-400 flex items-center gap-1.5 pt-0.5">
+                    <MapPin className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <span>{PERSONAL_INFO.location}</span>
+                  </p>
+                </div>
               </div>
 
               {/* Code Snippet Spec */}
