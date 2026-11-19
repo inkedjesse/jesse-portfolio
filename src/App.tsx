@@ -11,7 +11,7 @@ import { TechBackground } from './components/TechBackground';
 
 export const App: React.FC = () => {
   return (
-    <div className="relative isolate min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-brand-500 selection:text-white">
+    <div className="relative isolate flex min-h-screen flex-col bg-[#030712] font-sans text-slate-200 antialiased">
       <TechBackground />
       <Navbar />
       <main className="flex-1">

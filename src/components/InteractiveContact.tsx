@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, AlertCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { SectionHeader } from './SectionHeader';
 
 export const InteractiveContact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -59,195 +60,175 @@ export const InteractiveContact: React.FC = () => {
     }
   };
 
-  return (
-    <section id="contact" className="py-24 bg-slate-900/50 border-t border-slate-800 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-semibold text-brand-400 uppercase tracking-wider">
-            <MessageSquare className="w-3.5 h-3.5" /> Start a Conversation
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
-            Let's Connect for Opportunities
-          </h2>
-          <p className="text-slate-400 text-sm sm:text-base">
-            I'm currently seeking an IT / Frontend internship. Feel free to reach out directly via email, phone, or send a quick note below!
-          </p>
-        </div>
+  const mailtoFallback = `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formState.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formState.message + '\n\n— From ' + formState.name + ' (' + formState.email + ')')}`;
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
-          {/* Direct Contact Cards */}
-          <div className="lg:col-span-5 space-y-4">
-            
-            {/* Email Card */}
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 relative group hover:border-brand-500/50 transition-all">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
-                    <Mail className="w-5 h-5" />
-                  </div>
+  return (
+    <section id="contact" className="border-t border-slate-800/80 py-20 md:py-24">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <SectionHeader
+          index="06"
+          label="Start a Conversation"
+          title="Let's Connect for Opportunities"
+          description="I'm currently seeking an IT / Frontend internship. Feel free to reach out directly via email, phone, or send a quick note below!"
+        />
+
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          {/* Direct contact details */}
+          <div className="lg:col-span-5">
+            <dl className="panel divide-y divide-slate-800">
+              <div className="flex items-start justify-between gap-4 p-5">
+                <div className="flex items-start gap-3">
+                  <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                   <div>
-                    <div className="text-xs text-slate-400 font-mono">Email Address</div>
-                    <a
-                      href={`mailto:${PERSONAL_INFO.email}`}
-                      className="text-white font-medium hover:text-brand-400 transition-colors text-sm sm:text-base"
-                    >
-                      {PERSONAL_INFO.email}
-                    </a>
+                    <dt className="font-mono text-xs text-slate-400">Email Address</dt>
+                    <dd className="mt-1">
+                      <a
+                        href={`mailto:${PERSONAL_INFO.email}`}
+                        className="break-all text-[15px] text-slate-100 transition-colors hover:text-brand-300"
+                      >
+                        {PERSONAL_INFO.email}
+                      </a>
+                    </dd>
+                    {copied && (
+                      <p className="mt-1.5 flex items-center gap-1 font-mono text-[11px] text-emerald-400">
+                        <CheckCircle2 className="h-3 w-3" /> Copied to clipboard!
+                      </p>
+                    )}
                   </div>
                 </div>
-
                 <button
                   onClick={copyEmail}
-                  className="p-2 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors text-xs flex items-center gap-1"
+                  className="rounded-md border border-slate-700 p-2 text-slate-400 transition-colors hover:border-slate-500 hover:text-slate-100"
                   title="Copy email to clipboard"
+                  aria-label="Copy email to clipboard"
                 >
-                  {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
                 </button>
               </div>
-              {copied && (
-                <div className="text-[11px] text-emerald-400 mt-2 font-mono flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" /> Copied to clipboard!
-                </div>
-              )}
-            </div>
 
-            {/* Phone Card */}
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 group hover:border-brand-500/50 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <Phone className="w-5 h-5" />
-                </div>
+              <div className="flex items-start gap-3 p-5">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                 <div>
-                  <div className="text-xs text-slate-400 font-mono">Contact Number</div>
-                  <a
-                    href={`tel:${PERSONAL_INFO.phone.replace(/[^0-9+]/g, '')}`}
-                    className="text-white font-medium hover:text-emerald-400 transition-colors text-sm sm:text-base"
-                  >
-                    {PERSONAL_INFO.phone}
-                  </a>
+                  <dt className="font-mono text-xs text-slate-400">Contact Number</dt>
+                  <dd className="mt-1">
+                    <a
+                      href={`tel:${PERSONAL_INFO.phone.replace(/[^0-9+]/g, '')}`}
+                      className="text-[15px] text-slate-100 transition-colors hover:text-brand-300"
+                    >
+                      {PERSONAL_INFO.phone}
+                    </a>
+                  </dd>
                 </div>
               </div>
-            </div>
 
-            {/* Location Card */}
-            <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 group hover:border-brand-500/50 transition-all">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400">
-                  <MapPin className="w-5 h-5" />
-                </div>
+              <div className="flex items-start gap-3 p-5">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
                 <div>
-                  <div className="text-xs text-slate-400 font-mono">Location</div>
-                  <div className="text-white font-medium text-sm sm:text-base">
-                    {PERSONAL_INFO.location}
-                  </div>
+                  <dt className="font-mono text-xs text-slate-400">Location</dt>
+                  <dd className="mt-1 text-[15px] text-slate-100">{PERSONAL_INFO.location}</dd>
                 </div>
               </div>
-            </div>
 
-            {/* Availability Notice */}
-            <div className="p-4 rounded-xl bg-brand-500/10 border border-brand-500/20 text-xs text-slate-300 space-y-1">
-              <div className="font-semibold text-brand-300">Target Role:</div>
-              <p>Frontend Engineering • Full-Stack Web Development • UI/UX Design • IT Internships</p>
-            </div>
-
+              <div className="p-5">
+                <dt className="font-mono text-xs text-slate-400">Target Role:</dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-300">
+                  Frontend Engineering • Full-Stack Web Development • UI/UX Design • IT Internships
+                </dd>
+              </div>
+            </dl>
           </div>
 
-          {/* Interactive Message Box */}
-          <div className="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8">
+          {/* Message form */}
+          <div className="panel p-6 sm:p-8 lg:col-span-7">
             {submitted ? (
-              <div className="py-12 text-center space-y-4">
-                <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
-                <p className="text-slate-300 text-sm max-w-md mx-auto">
-                  Thanks for reaching out, <strong className="text-brand-300">{formState.name}</strong>! 
-                  Your message has been delivered to <span className="text-emerald-300 font-mono">{PERSONAL_INFO.email}</span>. I will get back to you soon.
+              <div className="py-10 text-center">
+                <CheckCircle2 className="mx-auto h-10 w-10 text-emerald-400" />
+                <h3 className="mt-4 text-xl font-semibold text-slate-50">Message Sent!</h3>
+                <p className="mx-auto mt-2 max-w-md text-[15px] leading-7 text-slate-300">
+                  Thanks for reaching out, <span className="font-medium text-slate-100">{formState.name}</span>! Your message
+                  has been delivered to <span className="font-mono text-emerald-300">{PERSONAL_INFO.email}</span>. I will get
+                  back to you soon.
                 </p>
-                <div className="pt-4 flex flex-wrap justify-center gap-3">
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setError(null);
-                      setFormState({ name: '', email: '', subject: '', message: '' });
-                    }}
-                    className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-sm"
-                  >
-                    Send Another Note
-                  </button>
-                </div>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setError(null);
+                    setFormState({ name: '', email: '', subject: '', message: '' });
+                  }}
+                  className="mt-6 rounded-md border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800/60"
+                >
+                  Send Another Note
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 mb-1">
+                    <label htmlFor="contact-name" className="mb-1.5 block text-sm font-medium text-slate-300">
                       Your Name
                     </label>
                     <input
+                      id="contact-name"
                       type="text"
                       required
                       placeholder="e.g. Jane Doe"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+                      className="field"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-slate-400 mb-1">
+                    <label htmlFor="contact-email" className="mb-1.5 block text-sm font-medium text-slate-300">
                       Your Email
                     </label>
                     <input
+                      id="contact-email"
                       type="email"
                       required
                       placeholder="jane@company.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+                      className="field"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 mb-1">
+                  <label htmlFor="contact-subject" className="mb-1.5 block text-sm font-medium text-slate-300">
                     Subject / Topic
                   </label>
                   <input
+                    id="contact-subject"
                     type="text"
                     required
                     placeholder="e.g. IT Internship Opportunity / Web Project"
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors"
+                    className="field"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-400 mb-1">
+                  <label htmlFor="contact-message" className="mb-1.5 block text-sm font-medium text-slate-300">
                     Your Message
                   </label>
                   <textarea
-                    rows={4}
+                    id="contact-message"
+                    rows={5}
                     required
                     placeholder="Hi Jesse, we'd love to discuss an IT opportunity with our team..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
-                  ></textarea>
+                    className="field resize-none"
+                  />
                 </div>
 
                 {error && (
-                  <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-200 flex items-start gap-2.5">
-                    <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                  <div role="alert" className="flex items-start gap-2.5 rounded-md border border-red-500/30 bg-red-500/10 p-3.5 text-sm text-red-200">
+                    <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-400" />
                     <div className="space-y-1">
                       <p>{error}</p>
-                      <a
-                        href={`mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formState.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formState.message + '\n\n— From ' + formState.name + ' (' + formState.email + ')')}`}
-                        className="inline-block text-brand-300 hover:text-brand-200 underline font-medium"
-                      >
+                      <a href={mailtoFallback} className="inline-block font-medium text-brand-300 underline hover:text-brand-200">
                         Send via your email app instead
                       </a>
                     </div>
@@ -257,13 +238,13 @@ export const InteractiveContact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white shadow-lg shadow-brand-500/25 transition-all disabled:opacity-50"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-500 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {loading ? (
                     <span>Sending...</span>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
+                      <Send className="h-4 w-4" />
                       <span>Send Direct Message</span>
                     </>
                   )}
@@ -271,9 +252,7 @@ export const InteractiveContact: React.FC = () => {
               </form>
             )}
           </div>
-
         </div>
-
       </div>
     </section>
   );

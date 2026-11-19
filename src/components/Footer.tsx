@@ -1,45 +1,27 @@
 import React from 'react';
-import { ArrowUp, Code2, Heart } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-xs">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-        
-        {/* Left Side: Name & Built Info */}
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
-            <Code2 className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="text-slate-200 font-semibold text-sm">
-              {PERSONAL_INFO.name}
-            </div>
-            <div className="text-slate-500">
-              BSIT Student • Bulacan State University
-            </div>
-          </div>
+    <footer className="border-t border-slate-800/80 py-10 text-sm text-slate-400">
+      <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
+        <div>
+          <p className="font-medium text-slate-200">{PERSONAL_INFO.name}</p>
+          <p className="mt-0.5 text-xs text-slate-500">BSIT Student • Bulacan State University</p>
         </div>
 
-        {/* Center: Tech tags */}
-        <div className="text-center text-slate-500 font-mono">
-          Built with React, TypeScript & Tailwind CSS
-        </div>
+        <p className="font-mono text-xs text-slate-500">Built with React, TypeScript & Tailwind CSS</p>
 
-        {/* Right Side: Back to Top */}
         <button
           onClick={scrollToTop}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs text-slate-400 transition-colors hover:text-slate-100"
         >
-          <span>Back to Top</span>
-          <ArrowUp className="w-3.5 h-3.5" />
+          Back to Top
+          <ArrowUp className="h-3.5 w-3.5" />
         </button>
-
       </div>
     </footer>
   );
