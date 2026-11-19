@@ -118,27 +118,24 @@ export const PROJECTS: Project[] = [
   {
     id: "cherubim-memorial",
     title: "Cherubim of Heaven Memorial Park Management System",
-    subtitle: "Design and Development of a Web-Based Memorial Services Management System with Integrated POS — Hagonoy, Bulacan",
-    role: "Lead Author, Project Manager & Front-End Developer",
-    description: "A cloud-based memorial services management system with integrated Point-of-Sale (POS) built for Cherubim of Heaven Memorial Park in Hagonoy, Bulacan (50+ monthly burials). Replaces manual logbooks, envelope files, and spreadsheets with a unified platform covering burial records, satellite grave inventory mapping, POS and installment tracking, wake space scheduling, contract renewal notifications, and role-based portals for admin, staff, and families.",
+    subtitle: "Client Capstone Project — Web-Based Memorial Services Management & Integrated POS",
+    role: "Project Manager & Front-End Developer",
+    description: "A web-based memorial services management system with integrated Point-of-Sale (POS) built for Cherubim of Heaven Memorial Park in Hagonoy, Bulacan. Replaces manual logbooks and spreadsheets with one platform for burial records, satellite grave mapping, installment tracking, wake scheduling, and contract renewal alerts.",
     highlights: [
-      "Built with React, Vite, Google Firebase (Cloud Firestore & Firebase Authentication), and Leaflet.js, deployed on Vercel across six Agile Scrum sprints with cemetery administrator sprint reviews.",
-      "Developed an interactive Leaflet.js satellite grave map builder for staff and a family portal grave locator with route directions from the park entrance and live GPS navigation.",
-      "Implemented integrated POS transactions with automatic Senior/PWD discounts, pre-need installment tracking, wake booking conflict detection, 30-day contract expiry alerts, role-based access control (RBAC), and timestamped audit logs.",
-      "Passed 36/36 functional test cases and 50 sequential reliability transactions (0% error rate, 100% data integrity, 0 unauthorized role-swap cases); evaluated by 43 respondents (4 park staff, 34 family users, 5 IT experts) at 4.61/5.00 ('Excellent') under ISO/IEC 25010:2023 and 83.31 on the System Usability Scale (SUS)."
+      "Built with React, Vite, Google Firebase (Cloud Firestore & Auth), and Leaflet.js, hosted on Vercel.",
+      "Includes an interactive satellite grave map builder for staff and a family portal grave locator with route directions and GPS navigation.",
+      "Features integrated POS with Senior/PWD discounts, pre-need installment tracking, wake booking conflict checks, 30-day contract expiry alerts, and role-based access for admin, staff, and families."
     ],
-    tags: ["React", "Vite", "Firebase Firestore", "Firebase Auth", "Leaflet.js", "Vercel", "POS & RBAC", "Agile Scrum", "ISO/IEC 25010:2023"],
+    tags: ["React", "Vite", "Firebase Firestore", "Firebase Auth", "Leaflet.js", "Vercel", "POS & RBAC"],
     category: "Full-Stack",
-    metrics: "ISO/IEC 25010:2023 Overall Score: 4.61/5.00 (Excellent) • SUS Score: 83.31/100 • 36/36 Test Cases Passed (N = 43)",
+    metrics: "Unified memorial services system with integrated POS, satellite grave mapping, and admin, staff, and family portals",
     badge: "Client Capstone",
     badgeEmphasis: true,
     specs: [
+      { label: "Client", value: "Hagonoy, Bulacan" },
       { label: "Stack", value: "React · Vite · Firebase · Leaflet.js" },
-      { label: "Deployment", value: "Vercel (Cloud)" },
-      { label: "Methodology", value: "Agile Scrum (6 Sprints)" },
-      { label: "ISO/IEC 25010:2023", value: "4.61 / 5.00 (Excellent)" },
-      { label: "Usability (SUS)", value: "83.31 / 100 (N = 43)" },
-      { label: "QA & Reliability", value: "36/36 Tests · 0% Error Rate" },
+      { label: "Hosting", value: "Vercel" },
+      { label: "Methodology", value: "Agile Scrum" },
     ],
     imageGradient: "from-blue-600/30 via-indigo-600/20 to-slate-900",
   },
@@ -195,12 +192,11 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: "Oct 2026 – Present",
     type: "Client-Facing Capstone",
     points: [
-      "Led the conceptualization, project administration, and frontend development of a cloud-based memorial services management system with integrated POS for Cherubim of Heaven Memorial Park (Hagonoy, Bulacan).",
-      "Built with React, Vite, Google Firebase (Cloud Firestore & Auth), and Leaflet.js, and deployed on Vercel over six Agile Scrum sprints with client sprint reviews.",
-      "Executed functional testing (36/36 test cases passed) and reliability testing (50 transactions, 0% error rate) with role-based access control and audit logging.",
-      "Evaluated with 43 respondents under ISO/IEC 25010:2023, achieving 4.61/5.00 ('Excellent'; Security & Safety 4.80, Functionality 4.76) and an 83.31 System Usability Scale (SUS) score."
+      "Led the design, project management, and frontend development of a web-based memorial services management system with integrated POS for Cherubim of Heaven Memorial Park.",
+      "Built with React, Vite, Google Firebase (Cloud Firestore & Auth), and Leaflet.js, deployed on Vercel using Agile Scrum.",
+      "Implemented burial records, satellite grave mapping, POS and installment tracking, wake scheduling, contract expiry alerts, and role-based access."
     ],
-    skillsUsed: ["React", "Vite", "Firebase Firestore", "Leaflet.js", "Vercel", "Agile Scrum", "ISO/IEC 25010:2023"]
+    skillsUsed: ["React", "Vite", "Firebase", "Leaflet.js", "Vercel", "Agile Scrum"]
   },
   {
     role: "Layout Artist",
