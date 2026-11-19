@@ -47,7 +47,7 @@ export const PERSONAL_INFO = {
   phone: "+63 967 849 3440",
   status: "Actively seeking an IT / Frontend Internship",
   links: {
-    github: "https://github.com",
+    github: "https://github.com/inkedjesse",
     linkedin: "https://linkedin.com",
     email: "mailto:sntsjessemae@gmail.com",
   }
