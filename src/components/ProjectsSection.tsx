@@ -82,27 +82,21 @@ export const ProjectsSection: React.FC = () => {
                   <div className="mb-4 flex items-center justify-between font-mono text-xs">
                     <span className="flex items-center gap-1.5 text-slate-400">
                       <Award className="h-4 w-4 text-amber-300" />
-                      Key Benchmark
+                      At a Glance
                     </span>
-                    <span className="text-emerald-400">Verified Capstone</span>
+                    <span className={project.badgeEmphasis ? 'text-emerald-400' : 'text-slate-300'}>{project.badge}</span>
                   </div>
 
                   <p className="text-xs text-slate-400">Project Highlights:</p>
                   <p className="mt-1.5 leading-6 text-slate-200">{project.metrics}</p>
 
                   <dl className="mt-6 space-y-2.5 border-t border-slate-800 pt-4 text-xs">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-slate-400">Environment:</dt>
-                      <dd className="font-mono text-slate-300">Web Application</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-slate-400">Methodology:</dt>
-                      <dd className="font-mono text-slate-300">Agile Scrum / UAT</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-slate-400">Client Evaluation:</dt>
-                      <dd className="font-mono text-emerald-400">ISO/IEC 25010</dd>
-                    </div>
+                    {project.specs.map((spec) => (
+                      <div key={spec.label} className="flex justify-between gap-4">
+                        <dt className="shrink-0 text-slate-400">{spec.label}:</dt>
+                        <dd className="text-right font-mono text-slate-300">{spec.value}</dd>
+                      </div>
+                    ))}
                   </dl>
                 </aside>
               </div>

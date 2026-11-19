@@ -8,6 +8,12 @@ export interface Project {
   tags: string[];
   category: 'Full-Stack' | 'Frontend / UI' | 'Client Work';
   metrics?: string;
+  /** Short label shown in the project's side box (e.g. "Client Capstone"). */
+  badge: string;
+  /** Highlight the badge in green (used for the capstone). */
+  badgeEmphasis?: boolean;
+  /** Key facts shown in the project's side box. Only list facts that are true for this project. */
+  specs: { label: string; value: string }[];
   githubUrl?: string;
   liveUrl?: string;
   imageGradient: string;
@@ -123,7 +129,15 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["React", "Node.js", "MySQL", "POS Integration", "Agile / Scrum", "ISO/IEC 25010", "UAT"],
     category: "Full-Stack",
-    metrics: "Real-Client System with Integrated POS & ISO/IEC 25010 Standardized Quality",
+    metrics: "Real-client web system with integrated POS; software quality to be evaluated against ISO/IEC 25010",
+    badge: "Client Capstone",
+    badgeEmphasis: true,
+    specs: [
+      { label: "Environment", value: "Web Application" },
+      { label: "Stack", value: "React / Node.js / MySQL" },
+      { label: "Methodology", value: "Agile Scrum / UAT" },
+      { label: "Quality Standard", value: "ISO/IEC 25010" },
+    ],
     imageGradient: "from-blue-600/30 via-indigo-600/20 to-slate-900",
   },
   {
@@ -139,7 +153,13 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Adobe Photoshop", "Visual Hierarchy", "Typography", "Editorial Layout", "Canva", "Print & Digital"],
     category: "Frontend / UI",
-    metrics: "Official University Publication serving thousands of student readers",
+    metrics: "Print and digital releases for the official Bulacan State University student publication",
+    badge: "University Publication",
+    specs: [
+      { label: "Medium", value: "Print & Digital" },
+      { label: "Tools", value: "Photoshop / Canva" },
+      { label: "Period", value: "April 2025 – Present" },
+    ],
     imageGradient: "from-purple-600/30 via-pink-600/20 to-slate-900",
   },
   {
@@ -155,7 +175,13 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Digital Marketing", "Social Media", "Customer Care", "Graphic Design", "Content Strategy"],
     category: "Client Work",
-    metrics: "Direct revenue driver with active customer engagement",
+    metrics: "Customer communication, order coordination, and marketing content for an online bakeshop",
+    badge: "Small Business",
+    specs: [
+      { label: "Channel", value: "Online / Social Media" },
+      { label: "Tools", value: "Canva / Photoshop / CapCut" },
+      { label: "Period", value: "August 2023 – Present" },
+    ],
     imageGradient: "from-amber-600/30 via-orange-600/20 to-slate-900",
   }
 ];
