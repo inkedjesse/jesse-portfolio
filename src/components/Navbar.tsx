@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code2, Sparkles, Send } from 'lucide-react';
+import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -22,75 +25,85 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-200 ${
-        isScrolled || mobileMenuOpen
-          ? 'border-slate-800 bg-[#030712]/90 backdrop-blur-md'
-          : 'border-transparent bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3.5'
+          : 'bg-transparent py-5'
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-8">
-        {/* Brand */}
-        <a href="#about" className="group flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-700 bg-slate-900 font-mono text-xs font-semibold text-brand-300 transition-colors group-hover:border-brand-500/60">
-            JS
-          </span>
-          <span className="leading-tight">
-            <span className="block text-[15px] font-semibold text-slate-100">Jesse Mae Santos</span>
-            <span className="block font-mono text-[11px] text-slate-400">Frontend & UI/UX</span>
-          </span>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand / Logo */}
+        <a href="#about" className="flex items-center gap-2.5 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+            <Code2 className="w-5 h-5" />
+          </div>
+          <div>
+            <div className="font-bold text-slate-100 group-hover:text-brand-400 transition-colors leading-tight text-base sm:text-lg">
+              Jesse Mae Santos
+            </div>
+            <div className="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              Frontend & UI/UX
+            </div>
+          </div>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 border border-slate-800/60 rounded-full px-4 py-1.5 backdrop-blur-sm">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-slate-400 transition-colors hover:text-slate-100"
+              className="text-sm font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-full hover:bg-slate-800/80 transition-all duration-150"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden rounded-md border border-brand-500/50 px-3.5 py-1.5 text-sm font-medium text-brand-300 transition-colors hover:bg-brand-500/10 hover:text-brand-200 md:inline-flex"
-        >
-          Get In Touch
-        </a>
+        {/* CTA Button */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white px-4 py-2 rounded-lg shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+          >
+            <Send className="w-3.5 h-3.5" />
+            Get In Touch
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="rounded-md p-2 text-slate-400 hover:bg-slate-900 hover:text-slate-100 md:hidden"
+          className="md:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
           aria-label="Toggle Menu"
-          aria-expanded={mobileMenuOpen}
         >
-          {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="border-t border-slate-800 px-5 pb-5 pt-2 md:hidden">
+        <div className="md:hidden bg-slate-950/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-2 backdrop-blur-lg">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block border-b border-slate-800/70 py-3 text-[15px] text-slate-300 hover:text-white"
+              className="block text-slate-300 hover:text-white hover:bg-slate-900 px-3 py-2 rounded-md font-medium text-base transition-colors"
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-4 block rounded-md bg-brand-600 py-2.5 text-center text-sm font-medium text-white hover:bg-brand-500"
-          >
-            Get In Touch
-          </a>
+          <div className="pt-3">
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-center bg-brand-600 hover:bg-brand-500 text-white py-2.5 rounded-lg font-medium shadow-md shadow-brand-500/30"
+            >
+              Get In Touch
+            </a>
+          </div>
         </div>
       )}
     </header>

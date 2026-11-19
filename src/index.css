@@ -4,36 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#030712] text-slate-200 font-sans;
-    font-feature-settings: 'cv11', 'ss01';
-    text-rendering: optimizeLegibility;
-  }
-
-  ::selection {
-    @apply bg-brand-500/40 text-white;
-  }
-
-  :focus-visible {
-    @apply outline-none ring-2 ring-brand-400/70 ring-offset-2 ring-offset-[#030712];
-  }
-
-  section[id] {
-    scroll-margin-top: 5rem;
-  }
-}
-
-@layer components {
-  /* Reusable surface for cards */
-  .panel {
-    @apply rounded-lg border border-slate-800 bg-slate-900/60 backdrop-blur-[2px];
-  }
-
-  .tag {
-    @apply inline-flex items-center rounded border border-slate-700/80 bg-slate-800/40 px-2 py-0.5 font-mono text-xs text-slate-300;
-  }
-
-  .field {
-    @apply w-full rounded-md border border-slate-700 bg-slate-950/70 px-3.5 py-2.5 text-[15px] text-slate-100 placeholder-slate-500 transition-colors focus:border-brand-400 focus:outline-none focus:ring-1 focus:ring-brand-400/40;
+    @apply bg-slate-950 text-slate-100 font-sans;
   }
 }
 
@@ -42,7 +13,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #090d16;
 }
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
@@ -52,8 +23,15 @@
   background: #334155;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* Glow effects */
+.glow-brand {
+  box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25);
+}
+
+.glow-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
 }
