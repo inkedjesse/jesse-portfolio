@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check, MessageSquare, AlertCircle } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const InteractiveContact: React.FC = () => {
@@ -12,6 +12,7 @@ export const InteractiveContact: React.FC = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
@@ -19,15 +20,43 @@ export const InteractiveContact: React.FC = () => {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
-    // Simulate backend submission
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/sntsjessemae@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          subject: formState.subject,
+          _subject: `[Portfolio] ${formState.subject}`,
+          message: formState.message,
+          _template: 'table',
+        }),
+      });
+
+      const data = await response.json().catch(() => null);
+      if (!response.ok || (data && (data.success === false || data.success === 'false'))) {
+        throw new Error(data?.message || 'Unable to send message right now.');
+      }
+
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Unable to send your message right now. Please try emailing directly.'
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -133,21 +162,16 @@ export const InteractiveContact: React.FC = () => {
                 <div className="w-14 h-14 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Message Ready!</h3>
+                <h3 className="text-2xl font-bold text-white">Message Sent!</h3>
                 <p className="text-slate-300 text-sm max-w-md mx-auto">
                   Thanks for reaching out, <strong className="text-brand-300">{formState.name}</strong>! 
-                  Click below to open your preferred email client or copy my email directly.
+                  Your message has been delivered to <span className="text-emerald-300 font-mono">{PERSONAL_INFO.email}</span>. I will get back to you soon.
                 </p>
                 <div className="pt-4 flex flex-wrap justify-center gap-3">
-                  <a
-                    href={`mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formState.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formState.message + '\n\n— From ' + formState.name + ' (' + formState.email + ')')}`}
-                    className="px-5 py-2.5 rounded-lg bg-brand-500 hover:bg-brand-600 text-white font-medium text-sm shadow-md"
-                  >
-                    Open in Email App
-                  </a>
                   <button
                     onClick={() => {
                       setSubmitted(false);
+                      setError(null);
                       setFormState({ name: '', email: '', subject: '', message: '' });
                     }}
                     className="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium text-sm"
@@ -214,6 +238,21 @@ export const InteractiveContact: React.FC = () => {
                     className="w-full bg-slate-950 border border-slate-800 rounded-lg px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 focus:outline-none focus:border-brand-500 transition-colors resize-none"
                   ></textarea>
                 </div>
+
+                {error && (
+                  <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 text-xs text-red-200 flex items-start gap-2.5">
+                    <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                    <div className="space-y-1">
+                      <p>{error}</p>
+                      <a
+                        href={`mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(formState.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formState.message + '\n\n— From ' + formState.name + ' (' + formState.email + ')')}`}
+                        className="inline-block text-brand-300 hover:text-brand-200 underline font-medium"
+                      >
+                        Send via your email app instead
+                      </a>
+                    </div>
+                  </div>
+                )}
 
                 <button
                   type="submit"
