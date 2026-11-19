@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             {/* Subtitle / Bio */}
             <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl">
               4th-year BS Information Technology student at <strong className="text-slate-200">Bulacan State University</strong>. 
-              Currently leading full-stack development on a real-client web system in <span className="text-brand-300 font-medium">React, Node.js & MySQL</span>, 
+              Led full-stack development on a real-client web system in <span className="text-brand-300 font-medium">React, Vite, Firebase & Leaflet.js</span>, 
               backed by an editorial publication design background and a <span className="text-emerald-400 font-medium">Salesforce Administrator</span> certification.
             </p>
 
@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-400">
               <div className="flex items-center gap-2 bg-slate-900/40 border border-slate-800/60 rounded-lg p-2.5">
                 <CheckCircle2 className="w-4 h-4 text-brand-400 shrink-0" />
-                <span>React & Node.js Capstone PM</span>
+                <span>React & Firebase Capstone PM</span>
               </div>
               <div className="flex items-center gap-2 bg-slate-900/40 border border-slate-800/60 rounded-lg p-2.5">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />

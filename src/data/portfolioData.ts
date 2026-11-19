@@ -47,7 +47,7 @@ export const PERSONAL_INFO = {
   name: "Jesse Mae C. Santos",
   headline: "Frontend-Focused Developer & UI/UX Designer",
   subheadline: "4th-Year BSIT Student majoring in Web and Mobile Application Development at Bulacan State University.",
-  bio: "I bridge the gap between creative visual design and robust code. With hands-on experience leading client-facing web systems in React, Node.js, and MySQL, alongside an active editorial layout design background, I specialize in building responsive, accessible, and human-centric digital products.",
+  bio: "I bridge the gap between creative visual design and robust code. With hands-on experience leading client-facing web systems in React, Vite, and Firebase, alongside an active editorial layout design background, I specialize in building responsive, accessible, and human-centric digital products.",
   location: "Bulacan, Philippines",
   email: "sntsjessemae@gmail.com",
   phone: "+63 967 849 3440",
@@ -118,25 +118,27 @@ export const PROJECTS: Project[] = [
   {
     id: "cherubim-memorial",
     title: "Cherubim of Heaven Memorial Park Management System",
-    subtitle: "Client Capstone Project — Web-Based Management & Integrated POS",
-    role: "Project Manager & Front-End Developer",
-    description: "A comprehensive digital transformation solution for a real-world memorial park client. Consolidates plot reservation management, customer records, and an integrated Point-of-Sale (POS) system into a secure web portal.",
+    subtitle: "Design and Development of a Web-Based Memorial Services Management System with Integrated POS — Hagonoy, Bulacan",
+    role: "Lead Author, Project Manager & Front-End Developer",
+    description: "A cloud-based memorial services management system with integrated Point-of-Sale (POS) built for Cherubim of Heaven Memorial Park in Hagonoy, Bulacan (50+ monthly burials). Replaces manual logbooks, envelope files, and spreadsheets with a unified platform covering burial records, satellite grave inventory mapping, POS and installment tracking, wake space scheduling, contract renewal notifications, and role-based portals for admin, staff, and families.",
     highlights: [
-      "Led the end-to-end frontend architecture in React, emphasizing intuitive UX for non-technical office staff.",
-      "Engineered backend API integrations using Node.js and structured relational data in MySQL.",
-      "Coordinated Agile Scrum sprint cycles, sprint reviews, and technical documentation for client sign-off.",
-      "Conducted rigorous User Acceptance Testing (UAT) evaluated against the ISO/IEC 25010 software quality standard."
+      "Built with React, Vite, Google Firebase (Cloud Firestore & Firebase Authentication), and Leaflet.js, deployed on Vercel across six Agile Scrum sprints with cemetery administrator sprint reviews.",
+      "Developed an interactive Leaflet.js satellite grave map builder for staff and a family portal grave locator with route directions from the park entrance and live GPS navigation.",
+      "Implemented integrated POS transactions with automatic Senior/PWD discounts, pre-need installment tracking, wake booking conflict detection, 30-day contract expiry alerts, role-based access control (RBAC), and timestamped audit logs.",
+      "Passed 36/36 functional test cases and 50 sequential reliability transactions (0% error rate, 100% data integrity, 0 unauthorized role-swap cases); evaluated by 43 respondents (4 park staff, 34 family users, 5 IT experts) at 4.61/5.00 ('Excellent') under ISO/IEC 25010:2023 and 83.31 on the System Usability Scale (SUS)."
     ],
-    tags: ["React", "Node.js", "MySQL", "POS Integration", "Agile / Scrum", "ISO/IEC 25010", "UAT"],
+    tags: ["React", "Vite", "Firebase Firestore", "Firebase Auth", "Leaflet.js", "Vercel", "POS & RBAC", "Agile Scrum", "ISO/IEC 25010:2023"],
     category: "Full-Stack",
-    metrics: "Real-client web system with integrated POS; software quality to be evaluated against ISO/IEC 25010",
+    metrics: "ISO/IEC 25010:2023 Overall Score: 4.61/5.00 (Excellent) • SUS Score: 83.31/100 • 36/36 Test Cases Passed (N = 43)",
     badge: "Client Capstone",
     badgeEmphasis: true,
     specs: [
-      { label: "Environment", value: "Web Application" },
-      { label: "Stack", value: "React / Node.js / MySQL" },
-      { label: "Methodology", value: "Agile Scrum / UAT" },
-      { label: "Quality Standard", value: "ISO/IEC 25010" },
+      { label: "Stack", value: "React · Vite · Firebase · Leaflet.js" },
+      { label: "Deployment", value: "Vercel (Cloud)" },
+      { label: "Methodology", value: "Agile Scrum (6 Sprints)" },
+      { label: "ISO/IEC 25010:2023", value: "4.61 / 5.00 (Excellent)" },
+      { label: "Usability (SUS)", value: "83.31 / 100 (N = 43)" },
+      { label: "QA & Reliability", value: "36/36 Tests · 0% Error Rate" },
     ],
     imageGradient: "from-blue-600/30 via-indigo-600/20 to-slate-900",
   },
@@ -193,12 +195,12 @@ export const EXPERIENCES: ExperienceItem[] = [
     period: "Oct 2026 – Present",
     type: "Client-Facing Capstone",
     points: [
-      "Led the design and development of a full-scale web-based memorial services management system with an integrated POS.",
-      "Managed frontend development, debugging, and UI responsiveness in React.",
-      "Conducted User Acceptance Testing (UAT) and quality checks benchmarked against ISO/IEC 25010 software quality standards.",
-      "Prepared technical documentation and directed Agile Scrum sprint workflows across the student engineering team."
+      "Led the conceptualization, project administration, and frontend development of a cloud-based memorial services management system with integrated POS for Cherubim of Heaven Memorial Park (Hagonoy, Bulacan).",
+      "Built with React, Vite, Google Firebase (Cloud Firestore & Auth), and Leaflet.js, and deployed on Vercel over six Agile Scrum sprints with client sprint reviews.",
+      "Executed functional testing (36/36 test cases passed) and reliability testing (50 transactions, 0% error rate) with role-based access control and audit logging.",
+      "Evaluated with 43 respondents under ISO/IEC 25010:2023, achieving 4.61/5.00 ('Excellent'; Security & Safety 4.80, Functionality 4.76) and an 83.31 System Usability Scale (SUS) score."
     ],
-    skillsUsed: ["React", "Node.js", "MySQL", "UAT Testing", "Agile/Scrum", "Technical Documentation"]
+    skillsUsed: ["React", "Vite", "Firebase Firestore", "Leaflet.js", "Vercel", "Agile Scrum", "ISO/IEC 25010:2023"]
   },
   {
     role: "Layout Artist",
