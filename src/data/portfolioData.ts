@@ -167,7 +167,28 @@ export const PROJECTS: Project[] = [
       { label: "Tools", value: "Photoshop / Canva" },
       { label: "Period", value: "April 2025 – Present" },
     ],
-    gallery: [],
+    gallery: [
+      {
+        src: "/projects/cursor/ict-month.jpg",
+        alt: "National ICT Month (June 2026) publication graphic for CURSOR Publication",
+        caption: "National ICT Month (June 2026) — CURSOR Publication",
+      },
+      {
+        src: "/projects/cursor/finals-good-luck.jpg",
+        alt: "Best of Luck, Ka-CURSOR! (#1stSemFinals, Nov 3–7) publication graphic",
+        caption: "Best of Luck, Ka-CURSOR! (#1stSemFinals, Nov 3–7) — CURSOR Publication",
+      },
+      {
+        src: "/projects/cursor/martial-law-anniversary.jpg",
+        alt: "54th Anniversary of the Declaration of Martial Law (Sept 21) publication graphic",
+        caption: "54th Anniversary of the Declaration of Martial Law (Sept 21) — CURSOR Publication",
+      },
+      {
+        src: "/projects/cursor/merry-christmas.jpg",
+        alt: "Merry Christmas Greeting (Dec 25) publication graphic for CURSOR Publication",
+        caption: "Merry Christmas Greeting (Dec 25) — CURSOR Publication",
+      },
+    ],
     imageGradient: "from-purple-600/30 via-pink-600/20 to-slate-900",
   },
   {
