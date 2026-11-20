@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>Available for IT / Frontend Internship (2026–2027)</span>
+              <span>Available for IT / Frontend &amp; QA Internship (2026–2027)</span>
             </div>
 
             {/* Headline */}
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
                     {PERSONAL_INFO.name}
                   </h3>
                   <p className="text-xs sm:text-sm font-medium text-brand-300 leading-snug">
-                    Frontend Developer &amp; UI/UX Designer
+                    Frontend Developer • UI/UX • QA
                   </p>
                   <p className="text-xs text-slate-400 flex items-center gap-1.5 pt-0.5">
                     <MapPin className="w-3.5 h-3.5 text-sky-400 shrink-0" />
@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
                     <span className="text-slate-400">primaryFocus:</span> <span className="text-sky-300">"Frontend Engineering"</span>,
                   </div>
                   <div>
-                    <span className="text-slate-400">secondaryFocus:</span> <span className="text-sky-300">"UI/UX Design + Node/SQL APIs"</span>,
+                    <span className="text-slate-400">secondaryFocus:</span> <span className="text-sky-300">"UI/UX Design, QA Testing + Backend APIs"</span>,
                   </div>
                   <div>
                     <span className="text-slate-400">clientProject:</span> <span className="text-amber-300">"Memorial Park System & POS"</span>,

@@ -150,7 +150,7 @@ export const InteractiveContact: React.FC = () => {
             {/* Availability Notice */}
             <div className="p-4 rounded-xl bg-brand-500/10 border border-brand-500/20 text-xs text-slate-300 space-y-1">
               <div className="font-semibold text-brand-300">Target Role:</div>
-              <p>Frontend Engineering • Full-Stack Web Development • UI/UX Design • IT Internships</p>
+              <p>Frontend Engineering • QA / Software Testing • UI/UX Design • Full-Stack Web Development</p>
             </div>
 
           </div>

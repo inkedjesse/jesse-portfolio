@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
       "Includes an interactive satellite grave map builder for staff and a family portal grave locator with route directions and GPS navigation.",
       "Features integrated POS with Senior/PWD discounts, pre-need installment tracking, wake booking conflict checks, 30-day contract expiry alerts, and role-based access for admin, staff, and families."
     ],
-    tags: ["React", "Vite", "Firebase Firestore", "Firebase Auth", "Leaflet.js", "Vercel", "POS & RBAC"],
+    tags: ["React", "Vite", "Firebase Firestore", "Firebase Auth", "Leaflet.js", "Vercel", "POS & RBAC", "QA & UAT"],
     category: "Full-Stack",
     metrics: "Unified memorial services system with integrated POS, satellite grave mapping, and admin, staff, and family portals",
     badge: "Client Capstone",
@@ -194,9 +194,10 @@ export const EXPERIENCES: ExperienceItem[] = [
     points: [
       "Led the design, project management, and frontend development of a web-based memorial services management system with integrated POS for Cherubim of Heaven Memorial Park.",
       "Built with React, Vite, Google Firebase (Cloud Firestore & Auth), and Leaflet.js, deployed on Vercel using Agile Scrum.",
-      "Implemented burial records, satellite grave mapping, POS and installment tracking, wake scheduling, contract expiry alerts, and role-based access."
+      "Implemented burial records, satellite grave mapping, POS and installment tracking, wake scheduling, contract expiry alerts, and role-based access.",
+      "Handled functional testing, debugging, and User Acceptance Testing (UAT) across system modules."
     ],
-    skillsUsed: ["React", "Vite", "Firebase", "Leaflet.js", "Vercel", "Agile Scrum"]
+    skillsUsed: ["React", "Vite", "Firebase", "Leaflet.js", "Vercel", "Agile Scrum", "QA & UAT"]
   },
   {
     role: "Layout Artist",
