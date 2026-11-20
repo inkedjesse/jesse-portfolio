@@ -1,3 +1,9 @@
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -14,6 +20,7 @@ export interface Project {
   badgeEmphasis?: boolean;
   /** Key facts shown in the project's side box. Only list facts that are true for this project. */
   specs: { label: string; value: string }[];
+  gallery?: ProjectImage[];
   githubUrl?: string;
   liveUrl?: string;
   imageGradient: string;
@@ -137,6 +144,7 @@ export const PROJECTS: Project[] = [
       { label: "Hosting", value: "Vercel" },
       { label: "Methodology", value: "Agile Scrum" },
     ],
+    gallery: [],
     imageGradient: "from-blue-600/30 via-indigo-600/20 to-slate-900",
   },
   {
@@ -159,6 +167,7 @@ export const PROJECTS: Project[] = [
       { label: "Tools", value: "Photoshop / Canva" },
       { label: "Period", value: "April 2025 – Present" },
     ],
+    gallery: [],
     imageGradient: "from-purple-600/30 via-pink-600/20 to-slate-900",
   },
   {
@@ -181,6 +190,7 @@ export const PROJECTS: Project[] = [
       { label: "Tools", value: "Canva / Photoshop / CapCut" },
       { label: "Period", value: "August 2023 – Present" },
     ],
+    gallery: [],
     imageGradient: "from-amber-600/30 via-orange-600/20 to-slate-900",
   }
 ];
