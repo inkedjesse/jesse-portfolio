@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Code2, Github, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUp, Code2, Github, Linkedin, Instagram, Mail, MapPin } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Footer: React.FC = () => {
@@ -79,20 +79,32 @@ export const Footer: React.FC = () => {
                 <Github className="w-4 h-4" />
               </a>
               <a
+                href={PERSONAL_INFO.links.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+                className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500/60 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href={PERSONAL_INFO.links.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+                className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500/60 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
                 href={PERSONAL_INFO.links.email}
                 aria-label="Email"
                 title={PERSONAL_INFO.email}
                 className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500/60 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center transition-colors"
               >
                 <Mail className="w-4 h-4" />
-              </a>
-              <a
-                href={`tel:${PERSONAL_INFO.phone.replace(/[^0-9+]/g, '')}`}
-                aria-label="Phone"
-                title={PERSONAL_INFO.phone}
-                className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:border-brand-500/60 hover:text-brand-600 dark:hover:text-brand-400 flex items-center justify-center transition-colors"
-              >
-                <Phone className="w-4 h-4" />
               </a>
             </div>
 

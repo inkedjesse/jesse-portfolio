@@ -61,7 +61,8 @@ export const PERSONAL_INFO = {
   status: "Actively seeking an IT / Frontend Internship",
   links: {
     github: "https://github.com/inkedjesse",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/inkedjesse/",
+    instagram: "https://www.instagram.com/solavenoir/",
     email: "mailto:sntsjessemae@gmail.com",
   }
 };
