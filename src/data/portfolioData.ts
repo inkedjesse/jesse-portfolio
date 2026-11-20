@@ -144,7 +144,43 @@ export const PROJECTS: Project[] = [
       { label: "Hosting", value: "Vercel" },
       { label: "Methodology", value: "Agile Scrum" },
     ],
-    gallery: [],
+    gallery: [
+      {
+        src: "/projects/capstone/cover-slide.jpg",
+        alt: "Cherubim of Heaven Memorial Park Capstone title slide — Design and Development of a Web-Based Memorial Services Management System with Integrated POS",
+        caption: "Capstone Title Slide — Design and Development of a Web-Based Memorial Services Management System with Integrated POS",
+      },
+      {
+        src: "/projects/capstone/overview-slide.jpg",
+        alt: "System overview slide showing digital map, payment recording, wake scheduling, and contract alerts",
+        caption: "System Overview — Digital grave mapping, POS & receipts, wake booking, and contract expiry alerts",
+      },
+      {
+        src: "/projects/capstone/admin-dashboard.jpg",
+        alt: "Administrator Panel Dashboard showing user counts, active graves, monthly burials, and grave type occupancy",
+        caption: "Administrator Panel — Dashboard with user overview, grave availability, and monthly burial analytics",
+      },
+      {
+        src: "/projects/capstone/reports-financial.jpg",
+        alt: "Staff Panel Financial Reports showing total revenue, monthly revenue chart, revenue sources, and CSV export",
+        caption: "Staff Panel — Financial, burial, occupancy, collection, and renewal reports with CSV export",
+      },
+      {
+        src: "/projects/capstone/notifications-alerts.jpg",
+        alt: "Staff Panel Notifications & Alerts showing installment collections and contract renewal alerts",
+        caption: "Notifications & Alerts — Installment payment updates, wake schedules, and contract renewal reminders",
+      },
+      {
+        src: "/projects/capstone/interment-services.jpg",
+        alt: "Staff Panel Interment Services multi-step booking, wake space facilities, document checklist, and settlement workflow",
+        caption: "Interment Services — Multi-step burial workflow with wake space booking, document verification, and settlement",
+      },
+      {
+        src: "/projects/capstone/map-management.jpg",
+        alt: "Administrator Panel Map Management showing plot availability grid and Leaflet satellite map plot builder",
+        caption: "Map Management — Interactive plot grid and Leaflet.js satellite map builder for cemetery lots",
+      },
+    ],
     imageGradient: "from-blue-600/30 via-indigo-600/20 to-slate-900",
   },
   {
