@@ -52,9 +52,6 @@ export const ProjectsSection: React.FC = () => {
               key={project.id}
               className="group relative rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 p-6 sm:p-8 overflow-hidden shadow-lg shadow-slate-200/60 dark:shadow-xl dark:shadow-black/30"
             >
-              {/* Subtle Ambient Background Gradient (dark mode only to keep light cards clean) */}
-              <div className={`hidden dark:block absolute top-0 right-0 w-96 h-96 bg-gradient-to-br ${project.imageGradient} opacity-20 blur-3xl pointer-events-none group-hover:opacity-30 transition-opacity`} />
-
               <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 {/* Left Overview Column */}

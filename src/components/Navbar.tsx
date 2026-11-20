@@ -41,7 +41,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
         <a href="#about" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+          <div className="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
             <Code2 className="w-5 h-5" />
           </div>
           <div>
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme }) => {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white px-4 py-2 rounded-lg shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-semibold bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white px-4 py-2 rounded-lg shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             <Send className="w-3.5 h-3.5" />
             Get In Touch

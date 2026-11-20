@@ -5,10 +5,6 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 export const Hero: React.FC = () => {
   return (
     <section id="about" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Subtle Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-brand-600/10 via-indigo-500/5 dark:from-brand-600/15 dark:via-indigo-500/10 to-transparent blur-[120px] pointer-events-none -z-10 rounded-full" />
-      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-emerald-500/5 dark:bg-emerald-500/10 blur-[100px] pointer-events-none -z-10 rounded-full" />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -27,7 +23,7 @@ export const Hero: React.FC = () => {
             {/* Headline */}
             <div className="space-y-2">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
-                Hi, I'm <span className="bg-gradient-to-r from-brand-600 via-indigo-600 to-sky-600 dark:from-brand-400 dark:via-indigo-300 dark:to-sky-400 bg-clip-text text-transparent">Jesse Mae</span>.
+                Hi, I'm <span className="text-brand-600 dark:text-brand-400">Jesse Mae</span>.
               </h1>
               <h2 className="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-300">
                 Front-End Developer with a Designer's Eye &amp; Backend Foundation
@@ -45,7 +41,7 @@ export const Hero: React.FC = () => {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-600 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all"
               >
                 <span>Explore Featured Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -80,7 +76,7 @@ export const Hero: React.FC = () => {
 
           {/* Right Visual Card: Interactive Developer Profile Spec */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800 p-6 shadow-xl shadow-slate-200/70 dark:shadow-2xl dark:shadow-black/50 overflow-hidden">
+            <div className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-xl shadow-slate-200/70 dark:shadow-2xl dark:shadow-black/50 overflow-hidden">
               
               {/* Terminal Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-500 dark:text-slate-400 font-mono">
@@ -97,7 +93,7 @@ export const Hero: React.FC = () => {
 
               {/* Profile Portrait & Identity */}
               <div className="py-5 border-b border-slate-200 dark:border-slate-800/80 flex items-center gap-4 sm:gap-5">
-                <div className="p-[2px] rounded-2xl bg-gradient-to-tr from-brand-500 via-indigo-400 to-sky-400 shadow-lg shadow-brand-500/20 shrink-0">
+                <div className="p-[2px] rounded-2xl bg-brand-600 dark:bg-brand-500 shadow-lg shadow-brand-500/20 shrink-0">
                   <img
                     src="/profile.jpg"
                     alt={PERSONAL_INFO.name}

@@ -55,7 +55,7 @@ export const SkillsSection: React.FC = () => {
         </div>
 
         {/* Active Category Display */}
-        <div className="bg-white dark:bg-gradient-to-b dark:from-slate-900/90 dark:to-slate-950/90 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-sm shadow-sm dark:shadow-none">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur-sm shadow-sm dark:shadow-none">
           <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-200 dark:border-slate-800 gap-4">
             <div>
               <div className="flex items-center gap-2 text-brand-600 dark:text-brand-400 font-semibold text-lg">
