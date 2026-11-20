@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
                 Hi, I'm <span className="text-brand-600 dark:text-brand-400">Jesse Mae</span>.
               </h1>
               <h2 className="text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-300">
-                Front-End Developer with a Designer's Eye &amp; Backend Foundation
+                Front-End Developer | UI/UX Designer | Quality Assurance
               </h2>
             </div>
 
