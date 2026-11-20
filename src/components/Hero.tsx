@@ -4,7 +4,7 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="about" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section id="about" className="relative pt-24 pb-16 md:pt-28 md:pb-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
