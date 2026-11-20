@@ -247,7 +247,28 @@ export const PROJECTS: Project[] = [
       { label: "Tools", value: "Canva / Photoshop / CapCut" },
       { label: "Period", value: "August 2023 – Present" },
     ],
-    gallery: [],
+    gallery: [
+      {
+        src: "/projects/autumn-treats/website-home.jpg",
+        alt: "Autumn Treats landing page featuring cookie hero banner, live chat widget, and New Autumn BIG Cookies showcase",
+        caption: "Autumn Treats Web Storefront — Hero banner, live chat widget, and BIG Cookies showcase",
+      },
+      {
+        src: "/projects/autumn-treats/store-finder.png",
+        alt: "Autumn Treats store finder map, newsletter signup, and footer section",
+        caption: "Store Finder & Footer — Interactive store locator section and newsletter signup",
+      },
+      {
+        src: "/projects/autumn-treats/brand-collage.jpg",
+        alt: "Autumn Treats branded social media collage showing seasonal cookie photography and logo",
+        caption: "Brand & Product Photography — Seasonal cookie content and Autumn Treats visual identity",
+      },
+      {
+        src: "/projects/autumn-treats/instagram-feed.jpg",
+        alt: "Autumn Treats Instagram profile grid (@autumntreats0) showing product reels and promotional graphics",
+        caption: "Instagram Presence (@autumntreats0) — Cohesive product feed, reels, and promo graphics",
+      },
+    ],
     imageGradient: "from-amber-600/30 via-orange-600/20 to-slate-900",
   }
 ];
